@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name | Full Stack Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Your Name, a full stack developer building fast, accessible web applications.">
+  <meta name="color-scheme" content="dark light">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS v4 browser CDN (zero-build prototype). Do not mix with the Tailwind CLI. -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js" defer></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    // Apply saved theme before first paint to avoid a flash
+    try { document.documentElement.dataset.theme = localStorage.getItem('theme') || 'dark'; } catch (e) {}
+    document.documentElement.classList.add('js');
+  </script>
+</head>
+<body>
+  <a href="#home" class="skip">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap flex items-center justify-between h-16">
+      <a href="#home" class="logo" id="logo" aria-label="Home"></a>
+      <nav aria-label="Primary" class="hidden md:flex items-center gap-1" id="navDesktop"></nav>
+      <div class="flex items-center gap-2">
+        <a href="#contact" class="btn btn-primary hidden sm:inline-flex">Let's Connect</a>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to light theme"><i data-lucide="sun" class="theme-sun"></i><i data-lucide="moon" class="theme-moon"></i></button>
+        <button class="icon-btn md:hidden" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><i data-lucide="menu"></i></button>
+      </div>
+    </div>
+    <nav id="mobileMenu" class="mobile-menu md:hidden" aria-label="Mobile" hidden></nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero"><div class="wrap hero-grid">
+      <div>
+        <p class="availability" id="availability"></p>
+        <p class="greeting" id="greeting"></p>
+        <h1 id="headline"></h1>
+        <p class="role-line">I'm a <span id="role" aria-live="off"></span><span class="caret" aria-hidden="true"></span></p>
+        <p class="lead" id="heroText"></p>
+        <div class="flex flex-wrap gap-3 mt-8">
+          <a href="#projects" class="btn btn-primary">Explore My Work</a>
+          <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+        </div>
+        <div class="flex gap-2 mt-8" id="heroSocials"></div>
+      </div>
+      <div class="avatar-wrap"><img id="avatar" class="avatar" width="420" height="420" alt=""></div>
+    </div></section>
+
+    <section id="about" class="section"><div class="wrap">
+      <h2 class="h2">About me</h2>
+      <div class="about-grid">
+        <div id="aboutText" class="prose-col"></div>
+        <div>
+          <h3 class="h3">Specializations</h3>
+          <ul id="aboutFocus" class="focus-list"></ul>
+          <div id="stats" class="stats"></div>
+          <a id="resumeBtn" class="btn btn-ghost mt-6" download hidden><i data-lucide="download"></i>Download résumé</a>
+        </div>
+      </div>
+    </div></section>
+
+    <section id="skills" class="section alt"><div class="wrap">
+      <h2 class="h2">Skills and technologies</h2>
+      <div id="skillGrid" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </div></section>
+
+    <section id="projects" class="section"><div class="wrap">
+      <h2 class="h2">Featured projects</h2>
+      <div id="filters" class="flex flex-wrap gap-2 mb-8" role="group" aria-label="Filter projects"></div>
+      <div id="projectGrid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
+    </div></section>
+
+    <section id="experience" class="section alt"><div class="wrap">
+      <h2 class="h2">Experience and education</h2>
+      <ol id="timeline" class="timeline"></ol>
+    </div></section>
+
+    <section id="achievements" class="section"><div class="wrap">
+      <h2 class="h2">Certifications and achievements</h2>
+      <div id="achGrid" class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </div></section>
+
+    <section id="contact" class="section alt"><div class="wrap">
+      <h2 class="h2 contact-title">Let's Connect and Build Something Great.</h2>
+      <p class="lead">Recruiters, clients and collaborators are all welcome. Pick whichever way suits you best.</p>
+      <div id="contactGrid" class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mt-10"></div>
+    </div></section>
+  </main>
+
+  <footer class="footer"><div class="wrap">
+    <div class="flex flex-wrap items-start justify-between gap-8">
+      <div><p class="logo" id="footLogo"></p><p class="muted mt-2" id="footTag"></p></div>
+      <nav aria-label="Footer" class="flex flex-wrap gap-x-5 gap-y-2" id="footNav"></nav>
+      <div class="flex gap-2" id="footSocials"></div>
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-4 mt-10 pt-6 border-top">
+      <p class="muted text-sm">&copy; <span id="year"></span> <span id="footName"></span>. All rights reserved.</p>
+      <button class="btn btn-ghost" id="toTop" type="button"><i data-lucide="arrow-up"></i>Back to top</button>
+    </div>
+  </div></footer>
+
+  <script src="js/script.js" defer></script>
+</body>
+</html>
